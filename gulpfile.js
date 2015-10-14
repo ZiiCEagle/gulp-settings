@@ -5,7 +5,7 @@ var $ = require('gulp-load-plugins')();
 /**
 *   SASS Task 
 */
-gulp.task('scss', function(){
+gulp.task('s', function(){
 
     gulp.src('scss/style.scss')
         .pipe($.sass().on('error', $.sass.logError))
@@ -21,7 +21,7 @@ gulp.task('scss', function(){
 /**
  *   JS Task
  */
-gulp.task('js', function(){
+gulp.task('j', function(){
 
     // Jquery first, modules then, app last
     gulp.src(['js/modules/jquery.js', 'js/modules/*.js', '!js/modules/*.min.js', 'js/app.js'])
@@ -34,14 +34,18 @@ gulp.task('js', function(){
 });
 
 
-gulp.task('watch', function(){
-    gulp.watch('scss/**', ['scss']);
-    gulp.watch('js/app.js', ['js']);
+
+/**
+ *   Watch Task
+ */
+gulp.task('w', function(){
+    gulp.watch('scss/**', ['s']);
+    gulp.watch('js/app.js', ['j']);
 });
 
 
 
-gulp.task('default', ['scss', "js"], function(){
+gulp.task('default', ['s', "j"], function(){
 
 });
 

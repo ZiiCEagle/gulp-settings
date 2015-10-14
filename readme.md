@@ -34,13 +34,15 @@ Si on veut utiliser les tâches :
 
 
 ``` sh
-    gulp // Pour la tâche par défaut
-    gulp scss // Pour compiler le scss
-    gulp js // Pour compiler le js
-    gulp watch // Pour compiler les fichiers lors de la sauvegarde
+$	gulp // Pour la tâche par défaut (ici elle executera les tâches scss et js par défaut)
+$ 	gulp s // Pour compiler le scss
+$ 	gulp j // Pour compiler le js
+$ 	gulp w // Pour compiler les fichiers lors de la sauvegarde
 ```
 
 
 ## Informations complémentaires
+
+N'oubliez d'ajouter le .gitignore à votre dépo git pour ne pas historiser tous les packages inutilement.
 
 N'hésitez pas à me contacter pour avec des informations complémentaires ou me remonter un bug.
