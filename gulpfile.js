@@ -38,7 +38,7 @@ gulp.task('j', function(){
 /**
  *   Watch Task
  */
-gulp.task('w', function(){
+gulp.task('w', ['s', "j"], function(){
     gulp.watch('scss/**', ['s']);
     gulp.watch('js/app.js', ['j']);
 });

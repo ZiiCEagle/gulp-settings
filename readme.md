@@ -20,24 +20,24 @@ Il vous suffira de cloner le projet et d'adapter le gulpfile.js et les dépendan
 On installe gulp
 
 ``` sh
-    sudo npm install gulp
+$	sudo npm install gulp
 ```
 
 On installe maintenant nos packages : 
 
 
 ``` sh
-    npm install gulp-autoprefixer gulp-sass gulp-size gulp-uglify gulp-concat gulp-load-plugins gulp-minify-css gulp-rename --save-dev
+$	npm install gulp-autoprefixer gulp-sass gulp-size gulp-uglify gulp-concat gulp-load-plugins gulp-minify-css gulp-rename --save-dev
 ```
 
 Si on veut utiliser les tâches : 
 
 
 ``` sh
-$	gulp // Pour la tâche par défaut (ici elle executera les tâches scss et js par défaut)
+$	gulp   // Pour la tâche par défaut (ici elle executera les tâches scss et js par défaut)
 $ 	gulp s // Pour compiler le scss
 $ 	gulp j // Pour compiler le js
-$ 	gulp w // Pour compiler les fichiers lors de la sauvegarde
+$ 	gulp w // Pour éxecuter une fois les deux tâches et ensuite compiler automatiquement les fichiers lors de la sauvegarde
 ```
 
 
