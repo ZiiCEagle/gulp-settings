@@ -1,4 +1,4 @@
-# Gulpfile.js v1.0
+# Gulpfile.js v1.3
 
 Dépot pour retrouver mon gulpfile.js et les dépendances que j'utilise avec qui ne change presque pas de projet en projet.
 
@@ -17,20 +17,38 @@ Il vous suffira de cloner le projet et d'adapter le gulpfile.js et les dépendan
 
 ## CLI
 
-On installe gulp
+### On installe gulp
 
 ``` sh
-$	sudo npm install gulp
+$	sudo npm install gulp -g
 ```
 
-On installe maintenant nos packages : 
+### On installe maintenant nos packages : 
 
 
 ``` sh
-$	npm install gulp-autoprefixer gulp-sass gulp-size gulp-uglify gulp-concat gulp-load-plugins gulp-minify-css gulp-rename --save-dev
+$	npm install gulp-autoprefixer gulp-sass gulp-size gulp-uglify gulp-concat gulp-load-plugins gulp-minify-css gulp-rename --g
 ```
 
-Si on veut utiliser les tâches : 
+### On ajoute browser-sync pour actualiser automatiquement nos navigateurs (optionnel) : 
+
+``` sh
+$	npm install browser-sync -g
+```
+
+#### On écoute les modifications des fichiers souhaités :
+
+Par exemple ici je veux écouter les modifications de mon css, de mon js et de mon dossier contenant mon PHP : App
+
+``` sh
+$	browser-sync start --proxy "local.dev" --files "public/css/style.min.css, public/js/app.min.js, App"
+```
+
+local.dev ou l'adresse de votre serveur.
+
+
+
+## Si on veut utiliser les tâches : 
 
 
 ``` sh
@@ -42,6 +60,8 @@ $ 	gulp w // Pour éxecuter une fois les deux tâches et ensuite compiler automa
 
 
 ## Informations complémentaires
+
+Il faut bien-sûr adapter les chemins selon vos besoins.
 
 N'oubliez d'ajouter le .gitignore à votre dépo git pour ne pas historiser tous les packages inutilement.
 
