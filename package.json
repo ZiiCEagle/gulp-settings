@@ -1,0 +1,19 @@
+{
+  "name": "gulp-settings",
+  "version": "2.0.0",
+  "description": "Mon environnement pour gulp",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://ziiceagle@github.com/ZiiCEagle/gulp-settings.git"
+  },
+  "author": "Guillaume Briday <guillaumebriday@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ZiiCEagle/gulp-settings/issues"
+  },
+  "homepage": "https://github.com/ZiiCEagle/gulp-settings#readme"
+}

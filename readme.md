@@ -1,9 +1,6 @@
-# Gulpfile.js v1.3
+# Gulpfile.js v2.0
 
-Dépot pour retrouver mon gulpfile.js et les dépendances que j'utilise avec qui ne change presque pas de projet en projet.
-
-Il vous suffira de cloner le projet et d'adapter le gulpfile.js et les dépendances selon vos besoins.
-
+Mise en place de Gulp avec du [CoffeeScript](http://coffeescript.org) et [Bower](http://bower.io)
 
 ## Table des matières
 
@@ -17,52 +14,78 @@ Il vous suffira de cloner le projet et d'adapter le gulpfile.js et les dépendan
 
 ## CLI
 
-### On installe gulp
+### Initialisation du projet
 
-``` sh
-$	sudo npm install gulp -g
+```
+$ npm init
 ```
 
-### On installe maintenant nos packages : 
+Installation de Bower
 
-
-``` sh
-$	npm install gulp-autoprefixer gulp-sass gulp-size gulp-uglify gulp-concat gulp-load-plugins gulp-minify-css gulp-rename --g
+```
+$ npm install -g bower
 ```
 
-### On ajoute browser-sync pour actualiser automatiquement nos navigateurs (optionnel) : 
+Initialisation de bower
 
-``` sh
-$	npm install browser-sync -g
+```
+$ bower init
 ```
 
-#### On écoute les modifications des fichiers souhaités :
+On installe nos dépendances pour bower
 
-Par exemple ici je veux écouter les modifications de mon css, de mon js et de mon dossier contenant mon PHP : App
+```
+$ bower install font-awesome --save-dev
+``
 
-``` sh
-$	browser-sync start --proxy "local.dev" --files "public/css/style.min.css, public/js/app.min.js, App"
+On installe nos dépendances pour gulp
+
+```
+$ npm install --save-dev gulp coffee-script gulp-autoprefixer gulp-bower gulp-clean gulp-coffee gulp-concat gulp-cssnano gulp-jade gulp-load-plugins gulp-notify gulp-rename gulp-sass gulp-size node-notifier gulp-imagemin
 ```
 
-local.dev ou l'adresse de votre serveur.
+Je fais toujours un dossier assets pour ma structure de fichier de la forme :
+
+```
+.
++-- assets
+|   +-- js
+|   +-- scss
+|       +-- Tous les dossiers de ma structure css
+|      style.scss
+|   +-- img
+```
+
+Et je compile dans un dossier public de la forme
+
+```
+.
++-- public
+|   app.min.js
+|   style.min.css
+|   +-- fonts
+|       fonts
+```
 
 
+## Si on veut utiliser les tâches :
 
-## Si on veut utiliser les tâches : 
 
-
-``` sh
-$	gulp   // Pour la tâche par défaut (ici elle executera les tâches scss et js par défaut)
-$ 	gulp s // Pour compiler le scss
-$ 	gulp j // Pour compiler le js
-$ 	gulp w // Pour éxecuter une fois les deux tâches et ensuite compiler automatiquement les fichiers lors de la sauvegarde
+```
+$   gulp          // Pour la tâche par défaut (ici elle executera les tâches scss et js par défaut)
+$   gulp styles   // Pour compiler le scss
+$   gulp scripts  // Pour compiler le js
+$   gulp clean    // Pour cleaner les dossiers
+$   gulp watch    // Pour éxecuter une fois les deux tâches et ensuite compiler automatiquement les fichiers lors de la sauvegarde
 ```
 
 
 ## Informations complémentaires
 
-Il faut bien-sûr adapter les chemins selon vos besoins.
+Il faut bien-sûr adapter selon vos besoins !
 
 N'oubliez d'ajouter le .gitignore à votre dépo git pour ne pas historiser tous les packages inutilement.
+
+N'hésitez pas à proposer des modifications ou des améliorations que j'ajouterais avec plaisir.
 
 N'hésitez pas à me contacter pour avec des informations complémentaires ou me remonter un bug.
