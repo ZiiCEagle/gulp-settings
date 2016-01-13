@@ -36,7 +36,7 @@ On installe nos dépendances pour bower
 
 ```
 $ bower install font-awesome --save-dev
-``
+```
 
 On installe nos dépendances pour gulp
 
