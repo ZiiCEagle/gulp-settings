@@ -1,6 +1,7 @@
 gulp = require("gulp")
 $ = require("gulp-load-plugins")()
 notify = require("gulp-notify")
+browserSync = require("browser-sync")
 
 paths =
   bower: "bower_components/"
