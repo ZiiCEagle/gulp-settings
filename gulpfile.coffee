@@ -76,6 +76,13 @@ gulp.task "coffee", ->
   .pipe gulp.dest(paths.js)
 
 
+# Browser-sync task to watch modifications and init server
+gulp.task 'browser-sync', ->
+  browserSync.init
+      server:
+        baseDir: "./dist"
+      files: paths.public + "style.min.css"
+
 
 # Copy fonts files and associated scss files
 gulp.task 'fonts', ['bower'], ->
@@ -90,7 +97,6 @@ gulp.task 'clean', ->
     read: false
   .pipe $.clean
     force: true
-
 
 
 # Copy images
@@ -113,7 +119,7 @@ gulp.task "bower", ->
   $.bower()
 
 # Watch task
-gulp.task "watch", [ "default" ], ->
+gulp.task "serve", [ "default", "browser-sync" ], ->
   gulp.watch paths.sass + "**", [ "styles" ]
   gulp.watch paths.js + "*.coffee", [ "scripts" ]
 

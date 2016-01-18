@@ -1,6 +1,6 @@
-# Gulpfile.js v2.0
+# Gulpfile.js v2.1
 
-Mise en place de Gulp avec du [CoffeeScript](http://coffeescript.org) et [Bower](http://bower.io)
+Mise en place de Gulp avec du [CoffeeScript](http://coffeescript.org), [Bower](http://bower.io) et [Browser Sync](https://www.browsersync.io/)
 
 ## Table des matières
 
@@ -20,10 +20,10 @@ Mise en place de Gulp avec du [CoffeeScript](http://coffeescript.org) et [Bower]
 $ npm init
 ```
 
-Installation de Bower
+Installation de Bower et de Browsersync de manière globale
 
 ```
-$ npm install -g bower
+$ npm install -g bower browser-sync
 ```
 
 Initialisation de bower
@@ -41,7 +41,7 @@ $ bower install font-awesome --save-dev
 On installe nos dépendances pour gulp
 
 ```
-$ npm install --save-dev gulp coffee-script gulp-autoprefixer gulp-bower gulp-clean gulp-coffee gulp-concat gulp-cssnano gulp-jade gulp-load-plugins gulp-notify gulp-rename gulp-sass gulp-size node-notifier gulp-imagemin
+$ npm install --save-dev gulp coffee-script gulp-autoprefixer gulp-bower gulp-clean gulp-coffee gulp-concat gulp-cssnano gulp-jade gulp-load-plugins gulp-notify gulp-rename gulp-sass gulp-size node-notifier gulp-imagemin browser-sync
 ```
 
 Je fais toujours un dossier assets pour ma structure de fichier de la forme :
@@ -76,7 +76,7 @@ $   gulp          // Pour la tâche par défaut (ici elle executera les tâches 
 $   gulp styles   // Pour compiler le scss
 $   gulp scripts  // Pour compiler le js
 $   gulp clean    // Pour cleaner les dossiers
-$   gulp watch    // Pour éxecuter une fois les deux tâches et ensuite compiler automatiquement les fichiers lors de la sauvegarde
+$   gulp serve    // Pour éxecuter une fois les deux tâches, initialise le serveur browser-sync et ensuite compiler automatiquement les fichiers lors de la sauvegarde
 ```
 
 
