@@ -24,9 +24,9 @@ paths =
   js: "assets/js/"
   img: "assets/img/"
   dist: "dist/"
-  public: "public/"
+  public: "dist/public/"
 
-autoprefixer = [
+browsers = [
   "last 2 versions"
 ]
 
@@ -44,7 +44,7 @@ gulp.task "styles", [ "bower", "fonts" ], ->
     ))
     .on("error", sass.logError)
   .pipe autoprefixer
-    browsers: autoprefixer
+    browsers: browsers
   .pipe minifyCss()
   .pipe concat "style.css"
   .pipe rename
