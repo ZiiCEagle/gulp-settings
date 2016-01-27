@@ -1,4 +1,4 @@
-# Gulpfile.js v2.1
+# Gulpfile.js v2.1.1
 
 Mise en place de Gulp avec du [CoffeeScript](http://coffeescript.org), [Bower](http://bower.io) et [Browser Sync](https://www.browsersync.io/)
 
@@ -41,7 +41,7 @@ $ bower install font-awesome --save-dev
 On installe nos dépendances pour gulp
 
 ```
-$ npm install --save-dev gulp coffee-script gulp-autoprefixer gulp-bower gulp-clean gulp-coffee gulp-concat gulp-cssnano gulp-jade gulp-load-plugins gulp-notify gulp-rename gulp-sass gulp-size node-notifier gulp-imagemin browser-sync
+$ npm install --save-dev gulp coffee-script gulp-autoprefixer gulp-bower gulp-clean gulp-coffee gulp-concat gulp-minify-css gulp-jade gulp-notify gulp-rename gulp-sass gulp-size node-notifier gulp-imagemin browser-sync
 ```
 
 Je fais toujours un dossier assets pour ma structure de fichier de la forme :
@@ -67,18 +67,16 @@ Et je compile dans un dossier public de la forme
 |       fonts
 ```
 
-
 ## Si on veut utiliser les tâches :
-
 
 ```
 $   gulp          // Pour la tâche par défaut (ici elle executera les tâches scss et js par défaut)
 $   gulp styles   // Pour compiler le scss
 $   gulp scripts  // Pour compiler le js
 $   gulp clean    // Pour cleaner les dossiers
-$   gulp serve    // Pour éxecuter une fois les deux tâches, initialise le serveur browser-sync et ensuite compiler automatiquement les fichiers lors de la sauvegarde
+$   gulp watch    // Compile automatiquement les fichiers lors de la sauvegarde
+$   gulp browser-sync    // Initialise le serveur browser-sync
 ```
-
 
 ## Informations complémentaires
 
@@ -86,6 +84,4 @@ Il faut bien-sûr adapter selon vos besoins !
 
 N'oubliez d'ajouter le .gitignore à votre dépo git pour ne pas historiser tous les packages inutilement.
 
-N'hésitez pas à proposer des modifications ou des améliorations que j'ajouterais avec plaisir.
-
-N'hésitez pas à me contacter pour avec des informations complémentaires ou me remonter un bug.
+N'hésitez pas à proposer des modifications ou des améliorations que j'ajouterais avec plaisir mais également à me contacter pour avec des informations complémentaires ou me remonter un bug.
