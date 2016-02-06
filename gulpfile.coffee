@@ -10,7 +10,7 @@ jade = require('gulp-jade')
 minifyCss = require('gulp-minify-css')
 notify = require("gulp-notify")
 rename = require("gulp-rename")
-sass = require('sass')
+sass = require('gulp-sass')
 size = require('gulp-size')
 uglify = require('gulp-uglify')
 
