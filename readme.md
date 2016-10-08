@@ -41,7 +41,7 @@ $ bower install font-awesome --save-dev
 On installe nos dépendances pour gulp
 
 ```
-$ npm install --save-dev gulp coffee-script gulp-autoprefixer gulp-uglify gulp-bower gulp-clean gulp-coffee gulp-concat gulp-minify-css gulp-jade gulp-notify gulp-rename gulp-sass gulp-size node-notifier gulp-imagemin browser-sync
+$ npm install --save-dev gulp coffee-script gulp-autoprefixer gulp-csscomb gulp-uglify gulp-bower gulp-clean gulp-coffee gulp-concat gulp-minify-css gulp-jade gulp-notify gulp-rename gulp-sass gulp-size node-notifier gulp-imagemin browser-sync
 ```
 
 Je fais toujours un dossier assets pour ma structure de fichier de la forme :

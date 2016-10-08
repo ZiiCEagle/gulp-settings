@@ -5,6 +5,7 @@ browserSync = require("browser-sync")
 clean = require('gulp-clean')
 coffee = require('gulp-coffee')
 concat = require('gulp-concat')
+csscomb = require('gulp-csscomb')
 imagemin = require('gulp-imagemin')
 jade = require('gulp-jade')
 minifyCss = require('gulp-minify-css')
@@ -28,7 +29,7 @@ paths =
 browsers = [ 'last 2 versions' ]
 
 # Task for styles files
-gulp.task 'styles', [ 'bower', 'fonts' ], ->
+gulp.task 'styles', [ 'bower', 'fonts', 'csscomb' ], ->
 
   src = [ paths.sass + 'style.scss' ]
 
@@ -116,6 +117,12 @@ gulp.task 'html', ->
 # Execute bower
 gulp.task 'bower', ->
   bower()
+
+# Running Csscomb for all scss files
+gulp.task 'csscomb', ->
+  gulp.src paths.sass + '**'
+  .pipe csscomb()
+  .pipe gulp.dest 'assets/scss'
 
 # Watch task
 gulp.task 'watch', [ 'default' ], ->
